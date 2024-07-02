@@ -7,7 +7,15 @@ type Data = {
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>,
+  res: NextApiResponse<Data>
 ) {
+  switch (req.method) {
+    case "GET":
+      console.log("GET request");
+      break;
+    case "POST":
+      console.log("POST request");
+      break;
+  }
   res.status(200).json({ name: "John Doe" });
 }
